@@ -7,7 +7,10 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('invite-module', function() {});
+  this.route('invite-module', function() {
+    this.route('find-users');
+    this.route('show-invites');
+  });
 });
 
 export default Router;
