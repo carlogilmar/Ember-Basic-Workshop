@@ -1,3 +1,19 @@
 <div class="text-center">
-  <h2>List all invites</h2>
+		<br><h2> Find Users </h2>
+		<p>Find by username for assing invite</p>
+</div>
+
+<div class="row center">
+	<div class="col-md-4 offset-md-4">
+		<div class="form-row align-items-center">
+				<label class="sr-only">Username</label>
+				<div class="input-group mb-2">
+					<div class="input-group-prepend">
+						<div class="input-group-text"> Username </div>
+					</div>
+					{{input type="text" class="form-control" placeholder="Find by username" value=username}}
+				</div>
+				<button {{action 'findUsername'}} class="btn btn-block btn-primary mb-2"> Find </button>
+		</div>
+	</div>
 </div>
