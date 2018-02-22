@@ -10,19 +10,19 @@
         <h3> App Menu </h3>
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active">
-              <span data-feather="home"></span>
-              Dashboard
-            </a>
+            {{#link-to 'application'}} Home {{/link-to}}
+            <span class="badge badge-secondary">index</span>
+          </li>
+          <li class="nav-item">
+            {{#link-to 'invite-module'}} Invite Module {{/link-to}}
+            <span class="badge badge-secondary">invite-module</span>
           </li>
         </ul>
       </div>
     </nav>
 
     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
         {{outlet}}
-      </div>
     </main>
 
   </div>
