@@ -7,7 +7,7 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
-  this.route('invite-module');
+  this.route('invite-module', function() {});
 });
 
 export default Router;
