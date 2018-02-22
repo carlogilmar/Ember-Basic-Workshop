@@ -7,6 +7,7 @@ export default Route.extend({
     findUsername:function(){
       let username = this.get('controller').get('username');
       this.get('controller').set('username', '');
+      this.transitionTo('invite-module.user', username);
     }
 
   }
