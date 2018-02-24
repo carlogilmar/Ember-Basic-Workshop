@@ -11,6 +11,7 @@
           <th scope="col">User Invited</th>
           <th scope="col">Date</th>
           <th scope="col">Status</th>
+          <th scope="col">Options</th>
         </tr>
       </thead>
       <tbody>
@@ -19,6 +20,11 @@
           <td> {{invite.user}} </td>
           <td> {{invite.dateCreated}} </td>
           <td> {{invite.status}} </td>
+          <td>
+            <button class="btn btn-outline-primary btn-sm" {{action 'reInvite' invite}}>Reinvite</button>
+            <button class="btn btn-outline-success btn-sm" {{action 'answerInvite' invite}}>Answer</button>
+            <button class="btn btn-outline-danger btn-sm"  {{action 'cancelInvite' invite}}>Cancel</button>
+          </td>
         </tr>
         {{/each}}
       </tbody>
