@@ -10,7 +10,7 @@ Router.map(function() {
   this.route('invite-module', function() {
     this.route('find-users');
     this.route('show-invites');
-    this.route('user', {path:':username'});
+    this.route('show-user', {path:'user/:user'});
   });
 });
 
