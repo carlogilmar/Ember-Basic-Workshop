@@ -1,12 +1,12 @@
 import Component from '@ember/component';
-import Ember from 'ember';
+import { computed } from '@ember/object';
 
 export default Component.extend({
 
-  chartModel: Ember.computed('invites', function(){
+  chartModel: computed('invites', function(){
 
     let invites = this.get('invites').get('content');
-    let statusCounters = this.getStatusCountes(invites);
+    let statusCounters = this.getStatusCounters(invites);
 
     /*
      *  Model for Chart.js
@@ -27,28 +27,27 @@ export default Component.extend({
         }
       ]
     };
-
     return model;
   }),
 
-  getStatusCounts:function(invites){
+  getStatusCounters:function(invites){
 
     let status = {"invited":0, "reinvited":0, "answered":0, "canceled":0};
     let invitesSize = invites.length
 
     for(var index=0; index < invitesSize; index++){
       var currentRecord = invites.pop();
-      status[currentRecord.__data.type]++;
+      status[currentRecord.__data.status]++;
     }
 
-    var model = [
+    var statusCounters = [
       status["invited"],
       status["reinvited"],
       status["answered"],
       status["canceled"], 0
     ]
 
-    return results;
+    return statusCounters;
 
   }
 
