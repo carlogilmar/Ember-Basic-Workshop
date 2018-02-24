@@ -11,6 +11,7 @@ Router.map(function() {
     this.route('find-users');
     this.route('show-invites');
     this.route('show-user', {path:'user/:user'});
+    this.route('new-user');
   });
 });
 
