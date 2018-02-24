@@ -1,0 +1,6 @@
+{
+  "name": "ember-basic-workshop",
+  "dependencies": {
+    "chartjs": "2.1.6"
+  }
+}
