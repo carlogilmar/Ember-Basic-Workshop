@@ -13,6 +13,7 @@ Router.map(function() {
     this.route('show-user', {path:'user/:user'});
     this.route('new-user');
   });
+  this.route('statics-module');
 });
 
 export default Router;
