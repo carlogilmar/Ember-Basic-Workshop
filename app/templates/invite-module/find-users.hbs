@@ -11,14 +11,17 @@
       <thead>
         <tr>
           <th scope="col">Username</th>
-          <th scope="col">Options</th>
+          <th scope="col"></th>
         </tr>
       </thead>
       <tbody>
         {{#each model as |user|}}
         <tr>
           <td> {{user.username}} </td>
-          <td> <button class="btn btn-sm btn-block btn-secondary" {{action 'showUser' user.id}}> Ver </button> </td>
+          <td class="text-center">
+						<button class="btn btn-sm btn-secondary" {{action 'showUser' user.id}}> Ver </button>
+						<button class="btn btn-sm btn-primary" {{action 'inviteUser' user}}> Envíar Invitación </button>
+					</td>
         </tr>
         {{/each}}
       </tbody>
