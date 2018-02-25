@@ -1,1 +1,24 @@
-{{yield}}
+<div class="row">
+	<div class="col text-center">
+		<h3> Invites Status</h3>
+		<p> This is a component </p>
+	</div>
+</div>
+<div class="container">
+	<div class="row">
+		<div class="col-sm">
+		</div>
+		<div class="col-sm">
+			<ul class="list-group text-center">
+				{{#each invitesStatus as |state|}}
+					<li class="list-group-item">
+						{{state.status}}
+						<span class="badge badge-secondary">{{state.counter}}</span>
+					</li>
+				{{/each}}
+			</ul>
+		</div>
+		<div class="col-sm">
+		</div>
+	</div>
+</div>
