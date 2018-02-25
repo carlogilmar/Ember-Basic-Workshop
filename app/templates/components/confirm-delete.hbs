@@ -1,0 +1,19 @@
+{{#bs-modal open=modal1 onHidden=(action (mut modal1) false) as |modal|}}
+	{{#modal.header}}
+		<h4 class="modal-title">
+			Eliminar Usuario
+		</h4>
+	{{/modal.header}}
+	{{#modal.body}}
+		<div class="text-center">
+			<br> Usuario: <strong>{{user.username}}</strong>
+			<br> Fullname: <strong>{{user.fullname}}</strong>
+		</div>
+	{{/modal.body}}
+	{{#modal.footer}}
+		{{#bs-button onClick=(action modal.close)}}Cancel{{/bs-button}}
+		<button class="btn btn-danger" {{action 'confirmDelete' user.id}}>Delete</button>
+	{{/modal.footer}}
+{{/bs-modal}}
+
+{{#bs-button onClick=(action (mut modal1) true) class="btn btn-danger"}} Delete {{/bs-button}}
