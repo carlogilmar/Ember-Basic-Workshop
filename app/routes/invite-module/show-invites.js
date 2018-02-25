@@ -8,7 +8,7 @@ export default Route.extend({
 
   actions:{
     reInvite:function(invite){
-      let currentInvite = invite
+      let currentInvite = invite;
       currentInvite.set('status', 'reinvited');
       currentInvite.save().then( ()=>{
         alert("Invited mark as REINVITED!!");
@@ -18,7 +18,7 @@ export default Route.extend({
         });
     },
     answerInvite:function(invite){
-      let currentInvite = invite
+      let currentInvite = invite;
       currentInvite.set('status', 'answered');
       currentInvite.save().then( ()=>{
         alert("Invited mark as ANSWERED!!");
@@ -28,7 +28,7 @@ export default Route.extend({
         });
     },
     cancelInvite:function(invite){
-      let currentInvite = invite
+      let currentInvite = invite;
       currentInvite.set('status', 'canceled');
       currentInvite.save().then( ()=>{
         alert("Invited mark as CANCELED!!");

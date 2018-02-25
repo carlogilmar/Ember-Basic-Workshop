@@ -19,7 +19,20 @@
         <tr>
           <td> {{invite.user}} </td>
           <td> {{invite.dateCreated}} </td>
-          <td> {{invite.status}} </td>
+          <td>
+            {{#if (eq invite.status "invited")}}
+              <span class="badge badge-pill badge-primary"> Invited </span>
+            {{/if}}
+            {{#if (eq invite.status "reinvited")}}
+              <span class="badge badge-pill badge-secondary"> Reinvited </span>
+            {{/if}}
+            {{#if (eq invite.status "answered")}}
+              <span class="badge badge-pill badge-success"> Answered </span>
+            {{/if}}
+            {{#if (eq invite.status "canceled")}}
+              <span class="badge badge-pill badge-danger"> Canceled </span>
+            {{/if}}
+          </td>
           <td>
             <button class="btn btn-outline-primary btn-sm" {{action 'reInvite' invite}}>Reinvite</button>
             <button class="btn btn-outline-success btn-sm" {{action 'answerInvite' invite}}>Answer</button>
