@@ -12,6 +12,7 @@
         <tr>
           <th scope="col">Username</th>
           <th scope="col"></th>
+          <th scope="col"></th>
         </tr>
       </thead>
       <tbody>
@@ -22,6 +23,7 @@
 						<button class="btn btn-sm btn-secondary" {{action 'showUser' user.id}}> Ver </button>
 						<button class="btn btn-sm btn-primary" {{action 'inviteUser' user}}> Envíar Invitación </button>
 					</td>
+          <td> {{confirm-delete user=user deleteUserComponent="deleteUserRoute"}} </td>
         </tr>
         {{/each}}
       </tbody>

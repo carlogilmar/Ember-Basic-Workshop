@@ -25,6 +25,10 @@ export default Route.extend({
 			()=>{
 				alert("Error");
 			});
+		},
+
+		deleteUserRoute:function(user){
+			alert("I'm the route: "+user);
 		}
 
   }
