@@ -8,7 +8,17 @@ module.exports = function(defaults) {
       'bootstrapVersion': 4,
       'importBootstrapFont': false,
       'importBootstrapCSS': true
+    },
+    minifyJS: {
+      enabled: true
+    },
+    minifyCSS: {
+      enabled: true
+    },
+    fingerprint: {
+      enabled: true
     }
+
   });
 
   // Use `app.import` to add additional libraries to the generated
