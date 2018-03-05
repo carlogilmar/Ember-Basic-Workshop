@@ -17,7 +17,7 @@ export default Component.extend({
     let invitesSize = invites.length
 
     for(var index=0; index < invitesSize; index++){
-      var currentRecord = invites.pop();
+      var currentRecord = invites.get(index);
       status[currentRecord.__data.status]++;
     }
 
