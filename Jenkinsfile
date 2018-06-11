@@ -9,7 +9,6 @@ pipeline {
         nodejs(nodeJSInstallationName: 'Node 10.3.0') {
           echo 'Instalando componentes de npm'
           sh 'npm install'
-          sh 'node_modules/bower/bin/bower install'
         }
       }
     }
