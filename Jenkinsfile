@@ -3,15 +3,23 @@ pipeline {
   agent any
 
   stages {
-    stage('Stage 1') {
+    stage('Stage 1: Installation') {
       steps {
-        echo 'Hi!'
+        echo 'Instalando Node'
+        nodejs(nodeJSInstallationName: 'Node 10.3.0') {
+          echo 'Instalando componentes de npm'
+          sh 'npm install'
+          sh 'node_modules/bower/bin/bower install'
+        }
       }
     }
-    stage('Stage 2') {
+    stage('Stage 2: Test Ember') {
       steps {
         echo "Step Dos !!"
-        echo "Step tres !!"
+        nodejs(nodeJSInstallationName: 'Node 10.3.0') {
+          echo 'Running testing'
+          sh 'node_modules/ember-cli/bin/ember test'
+        }
       }
     }
   }
