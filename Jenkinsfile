@@ -10,7 +10,6 @@ pipeline {
           echo 'Instalando componentes de npm'
           sh 'npm install'
           sh 'npm audit fix'
-          sh 'node_modules/bower/bin/bower install'
         }
       }
     }
@@ -20,7 +19,8 @@ pipeline {
         nodejs(nodeJSInstallationName: 'Node 10.3.0') {
           echo 'Running testing'
           sh 'pwd'
-          sh 'ls -la'
+          sh 'ls -la node_modules'
+          sh 'node_modules/bower/bin/bower install'
           sh 'node_modules/ember-cli/bin/ember test'
         }
       }
