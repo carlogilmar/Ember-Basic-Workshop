@@ -1,29 +1,30 @@
-#!/usr/bin/env groovy
+pipeline {
 
-try{
-	node('master') {
-		checkout("https://github.com/carlogilmar/Ember-Basic-Workshop.git", "master")
-	}
-} catch(caughtError) {
-    currentBuild.result = "FAILURE"
-}
+  environment {
+    NAME="carlogilmar"
+  }
 
+  agent any
 
-def checkout(repo, branch) {
-    stage('Checkout'){
-        checkout([
-                    $class: 'GitSCM',
-                    branches: [[name: branch]],
-                    doGenerateSubmoduleConfigurations: false,
-                    extensions: [],
-                    submoduleCfg: [],
-                    userRemoteConfigs: [
-                                        [
-                                            credentialsId: 'github',
-                                            url: repo
-                                        ]
-                                       ]
-                 ])
+  stages {
+    stage('Stage 1') {
+      steps {
+        echo 'Hi!'
+        echo $NAME
+      }
     }
-}
+    stage('Stage 2') {
+      steps {
+        echo "Step Dos !!"
+        echo "Step tres !!"
+      }
+    }
+  }
 
+  post {
+    always {
+      cleanWs()
+    }
+  }
+
+}
