@@ -2,7 +2,7 @@
 
 try{
 	node('master') {
-		checkout("git@github.com:says33/myFirstAppRails.git", "master")
+		checkout("https://github.com/carlogilmar/Ember-Basic-Workshop.git", "master")
 	}
 } catch(caughtError) {
     currentBuild.result = "FAILURE"
