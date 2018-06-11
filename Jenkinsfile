@@ -10,6 +10,7 @@ pipeline {
           echo 'Instalando componentes de npm'
           sh 'npm install'
           sh 'npm audit fix'
+          sh 'node_modules/bower/bin/bower install'
         }
       }
     }
